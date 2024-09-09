@@ -82,5 +82,23 @@ redux를 쓰면 state를 보관해주는 store.js 파일이 필요하다.
 그리고 index.js도 일부 수정해야함.
 
 
+#Redux 3
+
+# { return } 이 만나면, 지워서 생략 가능
+state 수정하는 방법:
+initialState: 'lydia',
+    reducers : {
+        changeName(state){ //state는 기존 함수(lydia)
+            return state + ' kim'
+        }
+    }
+changeName 불러올 때마다 이름이 바뀔것임.
+마지막에 export 필수!
+export let { changeName } = user.actions
+let dispatch = useDispatch()
+dispatch(changeName())
+
+redux dispatch의 장점: 엄청 많은 component에 있는 하나의 정보를 한꺼번에 수정 가능~
+
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FeY6Jl1mijNq7y00BGiOPpA%2FPrototype%3Fnode-id%3D155-9089%26node-type%3DSECTION%26t%3D5a67IENIInAfiuMk-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D50%253A1074%26starting-point-node-id%3D108%253A1404" allowfullscreen></iframe>
