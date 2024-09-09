@@ -51,4 +51,29 @@ useEffect 장점: html을 먼저 로딩하고 useEffect 안에 있는 애들은 
 5. 특정state 변경시에만 실행하려면 [state명]
 
 
+#9/9
+ajax: GET 요청해서 서버랑 연동해서 원하는 json data 가져옴
+AJAX 사용하면 새로고침 없어도 GET/POST 가능
+npm install axios
+
+
+//동시에 ajax요청 여러개 하려면
+              Promise.all([ axios.get('/url1'), axios.get('/url2')])
+              .then( () => {})
+
+#Context API
+//Context API를 쓰면 props를 귀찮게 안써도 된다.
+export let Context1 = createContext() // State 보관함 만들기 그다음에 <Context>로 원하는 컴포넌트 감싸기</Context>
+다른 파일에서 import { Context1 } from './../App.js';
+function 안에 let {재고} = useContext(Context1)
+return 안에 {재고}
+
+단점: 
+1.state 변경시 쓸데없는 것까지 재렌더링함 -> 선능이슈
+2. 나중에 Context를 가져온 그 페이지를 다른 페이지에서 import해서 재사용하려면 컴포넌트 재사용이 어려움
+
+결론 -> Context API보다는 외부 라이브러리인 Redux를 써보자
+
+
+
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FeY6Jl1mijNq7y00BGiOPpA%2FPrototype%3Fnode-id%3D155-9089%26node-type%3DSECTION%26t%3D5a67IENIInAfiuMk-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D50%253A1074%26starting-point-node-id%3D108%253A1404" allowfullscreen></iframe>
