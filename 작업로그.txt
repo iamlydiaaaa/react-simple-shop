@@ -75,5 +75,12 @@ return 안에 {재고}
 결론 -> Context API보다는 외부 라이브러리인 Redux를 써보자
 
 
+#Redux 1
+Redux 사용하면 컴포넌트들이 props 없이 state 공유 가능하다
+주의사항: 18.1.0 이상 버전만 가능
+redux를 쓰면 state를 보관해주는 store.js 파일이 필요하다.
+그리고 index.js도 일부 수정해야함.
+
+
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FeY6Jl1mijNq7y00BGiOPpA%2FPrototype%3Fnode-id%3D155-9089%26node-type%3DSECTION%26t%3D5a67IENIInAfiuMk-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D50%253A1074%26starting-point-node-id%3D108%253A1404" allowfullscreen></iframe>
