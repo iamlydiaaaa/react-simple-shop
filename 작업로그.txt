@@ -1,0 +1,54 @@
+#1
+React Bootstrap : https://react-bootstrap.netlify.app/docs/getting-started/introduction
+
+npm install react-bootstrap bootstrap
+
+이미지파일을 넣을 때, 여러가지 방법.
+1. src/img/ 폴더 안에 이미지를 넣고, import bg from './img/bg.png'; 이렇게 불러와서 App.js에서 바로 사용하는 방법
+하지만 리액트가 build를 할 때 src안의 내용물은 다 압축돼서 파일명이 다 바뀌고 짜부됨.
+2. 파일명을 보존하고 싶다면 public/img/ 폴더 안에 저장하고, 경로도 /img/bg.png 이다.
+하지만 이것은 웹호스팅할 때 경로문제가 나타난다.
+경로문제를 예방하기 위해서는 <img src={process.env.PUBLIC_URL + '/img/bg.png'} />
+로 써야한다.
+
+
+#4
+라우터 설치
+index.js에 <BrowserRouter> 추가
+npm install react-router-dom@6
+import { Routes, Route, Link } from 'react-router-dom'
+
+#5
+페이지 이동 도와주는 네비게이터
+let navigate = useNavigate();
+navigate(-1) : 뒤로가기와 똑같음
+
+404페이지: <Route path="*" element={<div>없는 페이지임</div>} />
+*은 정해진 페이지 외의 모든 페이지
+
+
+useParams() : 자꾸 변경되는 url 번호를 가져올 수 있음
+let {id} = useParams();
+
+ npm install styled-components
+import styled from 'styled-components'
+
+let YellowBtn = styled.button`
+  background: lightyellow;
+  color: black;
+  padding: 10px;
+`
+장점: CSS까지 안가도 됨
+
+
+#
+useEffect 장점: html을 먼저 로딩하고 useEffect 안에 있는 애들은 나중에 실행하므로, 무거운 데이터 등을 가져올 때 유용하다
+
+1. 재렌더링마다 코드를 실행하고 싶으면: useEffect(()=> {})
+2. mount 시 1회만 코드 실행하고 싶으면: useEffect(()=> {}, [])
+3. unmount 시 코드 실행하고 싶으면: useEffect(()=> {return ()=>{}}, [])
+4. useEffect 실행 전에 뭔가 실행하려면 언제나 return() => {}
+5. 특정state 변경시에만 실행하려면 [state명]
+
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FeY6Jl1mijNq7y00BGiOPpA%2FPrototype%3Fnode-id%3D155-9089%26node-type%3DSECTION%26t%3D5a67IENIInAfiuMk-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D50%253A1074%26starting-point-node-id%3D108%253A1404" allowfullscreen></iframe>
